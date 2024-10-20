@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" />
+
+        <style>
+            @font-face {
+                font-family: "montserrat-regular";
+                src: url("./fonts/montserrat-regular.eot");
+                src: url("./fonts/montserrat-regular.eot#iefix") format("embedded-opentype"), url("./fonts/montserrat-regular.ttf") format("truetype"), url("./fonts/montserrat-regular.svg") format("svg");
+                font-weight: 400;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "GuardianSansXCond Bold";
+                src: url("./fonts/GuardianSansXCond-Bold.otf");
+                src: url("./fonts/GuardianSansXCond-Bold.otf#iefix") format("opentype");
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: "GuardianSansXCond Semibold";
+                src: url("./fonts/GuardianSansXCond-Semibold.otf");
+                src: url("./fonts/GuardianSansXCond-Bold.otf#iefix") format("opentype");
+                font-weight: 400;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Montserrat Light";
+                src: url("./fonts/Montserrat-Light.ttf");
+                src: url("./fonts/Montserrat-Light.ttf#iefix") format("truetype");
+                font-weight: 400;
+                font-style: normal;
+            }
+            *,
+            *::after,
+            *::before {
+                margin: 0;
+                padding: 0;
+            }
+            html,
+            body {
+                margin: 0;
+                font-size: 14px;
+                font-family: "Montserrat Light";
+                line-height: 1.5;
+                color: #fff;
+                background: #ececec;
+                overflow-x: hidden;
+                background: #0a0a0a;
+            }
+            img {
+                width: 100%;
+            }
+            a {
+                text-decoration: none;
+            }
+            .red-paging .cmp-carousel__content {
+                width: 100%;
+                white-space: nowrap;
+                cursor: pointer;
+                position: unset;
+                background: #000;
+            }
+            .red-paging .cmp-carousel__item {
+                display: inline-block;
+                width: 100%;
+                vertical-align: top;
+            }
+            .car-teaser .cmp-teaser {
+                position: relative;
+                background: #000;
+            }
+            .car-teaser .cmp-teaser__content {
+                position: absolute;
+                background: linear-gradient(270.63deg, rgba(0, 0, 0, 0) 14.3%, #181818 80.63%);
+                width: 100%;
+                padding: 20px 10%;
+                height: 100%;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+            .car-teaser .cmp-teaser__pretitle {
+                font-size: 60px;
+                color: #fff;
+                line-height: 1;
+                font-family: "GuardianSansXCond Bold";
+                margin-top: auto;
+            }
+            .car-teaser .cmp-teaser__title {
+                font-size: 60px;
+                color: #daaa00;
+                line-height: 1;
+                font-family: "GuardianSansXCond Bold";
+                color: #fff;
+            }
+            .car-teaser .cmp-teaser__description {
+                color: #a7a7a7;
+                margin: 16px 0 32px;
+                white-space: normal;
+            }
+            .car-teaser .cmp-teaser__description p {
+                max-width: 315px;
+            }
+            .car-teaser .cmp-teaser__action-container {
+                margin-bottom: auto;
+                white-space: normal;
+            }
+            .car-teaser .cmp-teaser__action-container .cmp-teaser__action-link {
+                color: #fff;
+                margin-right: 24px;
+                padding: 18px 24px;
+                position: relative;
+                display: inline-block;
+                border: 1px solid;
+                -o-border-image: linear-gradient(131.33deg, rgba(255, 255, 255, 0.26) -34.97%, rgba(255, 255, 255, 0) 114.31%);
+                border-image: linear-gradient(131.33deg, rgba(255, 255, 255, 0.26) -34.97%, rgba(255, 255, 255, 0) 114.31%);
+                font-size: 14px;
+                line-height: 19px;
+                -webkit-border-image-slice: 2;
+                border-image-slice: 2;
+                font-family: "montserrat-regular";
+                font-weight: bold;
+                background: linear-gradient(112.38deg, rgba(255, 255, 255, 0.5) -120.84%, rgba(255, 255, 255, 0.1) 79.67%);
+            }
+            .car-teaser .cmp-teaser__action-container .cmp-teaser__action-link:nth-child(2) {
+                background: transparent;
+                border: 1px solid #a7a7a7;
+            }
+            .no-arr .glide__bullets {
+                bottom: 100px;
+                left: 10%;
+                -webkit-transform: none;
+                transform: none;
+            }
+            .no-arr .glide__bullets .glide__bullet {
+                width: 34px;
+                height: 4px;
+                border-radius: 0;
+            }
+            .no-arr .glide__bullets .glide__bullet--active {
+                width: 54px;
+            }
+            @media (max-width: 767px) {
+                .car-teaser .cmp-teaser__content {
+                    padding: 20px 20px;
+                }
+                .car-teaser .cmp-teaser__pretitle,
+                .car-teaser .cmp-teaser__title {
+                    font-size: 40px;
+                    line-height: 44px;
+                }
+                .car-teaser .cmp-teaser__description {
+                    margin: 15px 0px 40px;
+                }
+                .car-teaser .cmp-teaser__action-container {
+                    margin-bottom: 45px;
+                }
+                .car-teaser .cmp-teaser__action-container .cmp-teaser__action-link {
+                    width: 100%;
+                    padding: 11px;
+                    text-align: center;
+                    font-size: 12px;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+                .car-teaser .cmp-teaser__action-container .cmp-teaser__action-link:first-child {
+                    padding: 11px 51px 11px 11px;
+                }
+                .no-arr .glide__bullets .glide__bullet {
+                    width: 12px;
+                    height: 2px;
+                    border: none;
+                    margin: 0;
+                    margin-right: 4px;
+                }
+                .no-arr .glide__bullets .glide__bullet--active {
+                    width: 20px;
+                }
+                .no-arr .glide__bullets {
+                    bottom: 30px;
+                    left: 24px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="carousel panelcontainer no-arr red-paging aem-GridColumn aem-GridColumn--default--12">
+            <div
+                class="cmp-carousel glide glide--ltr glide--slider glide--swipeable"
+                data-placeholder-text="false"
+                aria-live="polite"
+                aria-roledescription="carousel"
+                data-cmp-autoplay=""
+                data-cmp-delay="5000"
+                id="carousel-1c68f632f6"
+                role="group"
+            >
+                <div aria-atomic="false" aria-live="off" class="cmp-carousel__content glide__track" data-glide-el="track">
+                    <ul class="glide__slides" style="transition: transform cubic-bezier(0.165, 0.84, 0.44, 1); width: 1466px; transform: translate3d(0px, 0px, 0px);">
+                        <li
+                            aria-label="Slide 1 of 2"
+                            class="cmp-carousel__item cmp-carousel__item--active glide__slide glide__slide--active"
+                            data-cmp-hook-carousel="item"
+                            aria-labelledby="carousel-1c68f632f6-item-0e9b1492f2-tab"
+                            aria-roledescription="slide"
+                            id="carousel-1c68f632f6-item-0e9b1492f2-tabpanel"
+                            role="tabpanel"
+                            style="width: 723px; margin-right: 5px;"
+                        >
+                            <div class="teaser car-teaser">
+                                <div id="teaser-0e9b1492f2" class="cmp-teaser">
+                                    <div class="cmp-teaser__content">
+                                        <span></span>
+
+                                        <p class="cmp-teaser__pretitle">Monsoon</p>
+
+                                        <h2 class="cmp-teaser__title">
+                                            Service Drive
+                                        </h2>
+
+                                        <div class="cmp-teaser__description"><p>Visit your nearest Royal Enfield service centre to avail FREE monsoon servicing from August 16th to 22nd, 2022</p></div>
+
+                                        <div class="cmp-teaser__action-container">
+                                            <a class="cmp-teaser__action-link" id="teaser-0e9b1492f2-cta-19e3033e85" href="https://stagecdn.royalenfield.com/in/en/motorcycles/hunter-350/" draggable="true">Book a Service</a>
+
+                                            <a class="cmp-teaser__action-link" id="teaser-0e9b1492f2-cta-96aee652cf" href="https://stagecdn.royalenfield.com/in/en/v4/service-header/locate-us" draggable="true">Locate a service center</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="cmp-teaser__image">
+                                        <picture>
+                                            <source media="(max-width:767px)" defer="" srcset="https://stagecdn.royalenfield.com/content/dam/RE-Platform-Revamp/webp-images/carousel-mob-img-1.webp" />
+                                            <img src="https://stagecdn.royalenfield.com/content/dam/RE-Platform-Revamp/webp-images/banner-1.webp" />
+                                        </picture>
+                                        <div class="text--btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li
+                            aria-label="Slide 2 of 2"
+                            class="cmp-carousel__item glide__slide"
+                            data-cmp-hook-carousel="item"
+                            aria-labelledby="carousel-1c68f632f6-item-d719aa4b94-tab"
+                            aria-roledescription="slide"
+                            id="carousel-1c68f632f6-item-d719aa4b94-tabpanel"
+                            role="tabpanel"
+                            style="width: 723px; margin-left: 5px;"
+                        >
+                            <div class="teaser car-teaser">
+                                <div id="teaser-d719aa4b94" class="cmp-teaser">
+                                    <div class="cmp-teaser__content">
+                                        <span></span>
+
+                                        <p class="cmp-teaser__pretitle">Mega</p>
+
+                                        <h2 class="cmp-teaser__title">
+                                            Service Camp
+                                        </h2>
+
+                                        <div class="cmp-teaser__description"><p>Nothing sounds as good as a Royal Enfield running smoothly. Visit the Exclusive Mega Service Camp from 13th to 18th Jun 2022.</p></div>
+
+                                        <div class="cmp-teaser__action-container">
+                                            <a class="cmp-teaser__action-link" id="teaser-d719aa4b94-cta-9ee6a80121" href="https://stagecdn.royalenfield.com/in/en/motorcycles/hunter-350/" draggable="true">Book a Service</a>
+
+                                            <a class="cmp-teaser__action-link" id="teaser-d719aa4b94-cta-4ca6c86642" href="https://stagecdn.royalenfield.com/in/en/motorcycles/hunter-350/" draggable="true">Locate a service center</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="cmp-teaser__image">
+                                        <picture>
+                                            <source media="(max-width:767px)" defer="" srcset="https://stagecdn.royalenfield.com/content/dam/RE-Platform-Revamp/webp-images/carousel-mob-img-1.webp" />
+                                            <img loading="lazy" src="https://stagecdn.royalenfield.com/content/dam/RE-Platform-Revamp/webp-images/banner-1.webp" />
+                                        </picture>
+                                        <div class="text--btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    <button class="glide__bullet glide__bullet--active" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
+
+        <script>
+            var glide = new Glide(".glide", {
+                type: "slider",
+                rewind: false,
+            });
+            glide.mount();
+
+        </script>
+    </body>
+</html>
